@@ -8,24 +8,27 @@
 </head>
 
 <body>
-    <input type="text">
-    <input type="text">
-    <input type="text">
-    <input type="text">
+    <form action="">
+        <input type="text"><br>
+        <input type="text"><br>
+        <input type="text"><br>
+        <input type="text"><br>
+    </form>
 
     <!-- 
-        Задание. Инпуты идут один за другим, надо сделать чтобы после каждого инпута
-        появился тег br, чтобы инпуты стали стоять один под другим. Для этого:
-        1. Получите все инпуты, например с помощью querySelectorAll.
-        2. Переберите их с помощью цикла или forEach, и после каждого инпута
-        встявляйте тег br, например с помощью insertAdjacentHTML.
+        Задание. Сделайте, чтобы у всех инпутов снизу был внешний отступ (margin-bottom).
+        1. Получите все инпуты, например с помощью querySelectorAll
+        2. Переберите полученную коллекцию например с помощью forEach
+            2.1 У функции-обработчика, которая будет передаваться в forEach определите
+            параметр input
+            2.2 Чтобы менять стили обращайтесь к свойству style у параметра input
     -->
 
     <script>
         "use strict"
         let container = document.querySelectorAll('input');
-        container.forEach(function (item) {
-            item.insertAdjacentHTML('afterend', '<br>');
+        container.forEach(function (input) {
+            input.style.marginBottom = '10px';
         })
     </script>
 </body>
