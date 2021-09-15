@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="product">
         <div class="productName">Товар 1</div>
@@ -44,7 +46,19 @@
     -->
 
     <script>
+        "use strict"
+        let task1 = document.querySelectorAll('.product');
+        task1.forEach(function (item) {
+            item.style.background = 'gray';
+        })
 
+        let task2 = document.querySelectorAll('.productName');
+        task2.forEach(function (item) {
+            item.style.fontSize = '24px';
+        })
+
+        // не очень панял задачу с параметром, не до конца понятно что от меня требуется
     </script>
 </body>
+
 </html>
