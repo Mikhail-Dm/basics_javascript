@@ -82,11 +82,21 @@ const products = {
  */
 function clickHandler(event) {
     //вам нужно очищать содержимое .products
-    
+    document.querySelector('.products').innerHTML = ``;
+
     //в showCategory надо передать строку с типом категории, тип берите
     //из атрибута data-type у кнопки, по которой кликнули.
-    
+    let container = document.querySelectorAll('button');
+    container.forEach(function (item) {
+        item.addEventListener('click', function (event) {
+            let product = event.target.dataset.type;
+            let markup = getProductMarkup(product);
+            showCategory(markup);
+        })
+    });
 }
+
+clickHandler();
 
 /**
  * Функция берет товары (объекты) из соответствующего массива phones,
@@ -96,7 +106,7 @@ function clickHandler(event) {
  * по которой кликнули.
  */
 function showCategory(category) {
-    
+    document.querySelector('.products').innerHTML = category;
 }
 
 /**
@@ -109,5 +119,16 @@ function showCategory(category) {
  * в верху этого файла.
  */
 function getProductMarkup(product) {
-
+    let markup = ``;
+    products[`${product}`].forEach(function (item) {
+        markup += `<div class="${product}">
+        <div>${item.name}</div>
+        <img src="${item.imageUrl}" alt="">
+        <div>${item.price}</div>
+        <a href="https://example.com/producs/${item.id}">Подробнее</a>
+    </div>`;
+    })
+    return markup;
 }
+
+// Очень интересная задача!! Спасибо за труды.
