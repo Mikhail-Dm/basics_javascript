@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <div>
 
     </div>
@@ -16,7 +18,12 @@
     -->
 
     <script>
-
+        "use strict"
+        let parent = document.querySelector('div');
+        let h3_text = document.createElement('h3');
+        h3_text.innerHTML = 'hello world';
+        parent.appendChild(h3_text);
     </script>
 </body>
+
 </html>

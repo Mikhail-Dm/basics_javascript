@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <b>Lorem, ipsum.</b>
     <b class="sign">Lorem, ipsum.</b>
@@ -19,7 +21,19 @@
     -->
 
     <script>
-        
+        "use strict"
+        let collection_el = document.querySelectorAll('b');
+
+        console.log(collection_el);
+
+        collection_el.forEach(function (item) {
+            if (!item.classList.contains('sign')) {
+                item.classList.add('sign');
+            }
+        })
+
+        console.log(collection_el);
     </script>
 </body>
+
 </html>
