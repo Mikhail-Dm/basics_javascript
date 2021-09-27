@@ -23,7 +23,7 @@
                 <a class="nav-link" href="#">Link 3</a>
             </li>
         </ul>
-    
+
         <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
     </div>
 
@@ -34,8 +34,24 @@
     2. В зависимости от того по какому .nav-link кликнули нужно чтобы менялся текст
     в .text, соответствующие тексты вы найдете в app.js
     -->
-    
+
     <script src="app.js"></script>
+    <script>
+        "use strict"
+        let li_nav_item = document.querySelectorAll('.nav-item');
+        let button_nav_link = document.querySelectorAll('.nav-link');
+
+        li_nav_item.forEach(function (item) {
+            item.addEventListener('click', function (event) {
+                if (item == event.target.parentNode) {
+                    button_nav_link.forEach(function (item) {
+                        item.classList.remove('active');
+                    })
+                    event.target.classList.add('active');
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>

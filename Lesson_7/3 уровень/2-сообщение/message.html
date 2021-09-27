@@ -26,7 +26,27 @@
     -->
 
     <script>
-        
+        "use strict"
+        let button_message = document.querySelector('button');
+        let message = document.querySelector('.message');
+        let audioElement = new Audio('notification.mp3');
+
+        button_message.addEventListener('click', function (event) {
+            audioElement.volume = 0.2;
+            audioElement.play();
+
+            let messageHeight = message.clientHeight;
+            message.style.top = `calc(100vh + 20px - ${messageHeight}px - 5vh)`; // 5vh добавил, т.к. иначе message не полностью вылезало
+
+            message.addEventListener('mouseover', function (event) {
+                document.head.insertAdjacentHTML(
+                    'beforeend',
+                    `<style>.message {transition: 0.5s;}.message:hover {transform: translateY(10px);}</style>`);
+            });
+            message.addEventListener('mouseout', function (event) {
+                document.querySelector('style').remove();
+            });
+        })
     </script>
 </body>
 
