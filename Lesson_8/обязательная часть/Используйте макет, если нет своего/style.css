@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"); */
 body {
     margin: 0;
     font-family: Lato, sans-serif;
@@ -73,6 +73,21 @@ body {
     top: -19px;
     font-size: 12px;
     line-height: 19px;
+}
+
+.cartTable {
+    background: white;
+    position: absolute;
+    width: 800px;
+    height: 125px;
+    right: 0;
+    padding:15px;
+    font-size:18px;
+    text-align: left;
+}
+
+.cartTableHidden {
+    display: none;
 }
 
 .newArrivals {
